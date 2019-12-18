@@ -1,9 +1,11 @@
 # IGuide
 
-[![CI Status](https://img.shields.io/travis/whatsbug/IGuide.svg?style=flat)](https://travis-ci.org/whatsbug/IGuide)
+[![support](https://img.shields.io/badge/support-ios%209.0+-orange.svg)](#)
 [![Version](https://img.shields.io/cocoapods/v/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 [![License](https://img.shields.io/cocoapods/l/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 [![Platform](https://img.shields.io/cocoapods/p/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
+
+A Library for making animated tutorials inside your app
 
 ## Preview
 
