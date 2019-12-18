@@ -5,11 +5,18 @@
 [![License](https://img.shields.io/cocoapods/l/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 [![Platform](https://img.shields.io/cocoapods/p/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 
+## Preview
+
+![preview](/preview.gif) 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+- iOS 9.0+
+- Objective-C
 
 ## Installation
 
@@ -22,7 +29,8 @@ pod 'IGuide'
 
 ## Author
 
-whatsbug, whatsbug@qq.com
+* Github: [@whatsbug](https://github.com/whatsbug)
+* Weibo: [@biubiu浏览器](https://weibo.com/nantuapp)
 
 ## License
 
