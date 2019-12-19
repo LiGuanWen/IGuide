@@ -9,7 +9,7 @@ A Library for making animated tutorials inside your app
 
 ## Preview
 
-![preview](/preview.gif)![preview](/preview2.gif)
+![preview](/preview.gif)![preview](/preview2.gif)![preview](/preview3.png)
 
 ## Example
 
@@ -29,6 +29,12 @@ it, simply add the following line to your Podfile:
 pod 'IGuide'
 ```
 
+## Usage
+
+Conforms to the protocol 'IGuideViewControllerDataSource', and then calls
+```ruby
+[IGuideViewController showsWithDataSource:self];
+```
 ## Author
 
 * Github: [@whatsbug](https://github.com/whatsbug)
