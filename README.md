@@ -9,7 +9,7 @@ A Library for making animated tutorials inside your app
 
 ## Preview
 
-![preview](/preview.gif) ![preview](/preview2.gif)
+![preview](/preview.gif)![preview](/preview2.gif)
 
 ## Example
 
