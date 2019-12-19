@@ -32,13 +32,14 @@ pod 'IGuide'
 ## Usage
 
 Conforms to the protocol 'IGuideViewControllerDataSource', and then calls
+
 ```ruby
 [IGuideViewController showsWithDataSource:self];
 ```
+
 ## Author
 
 * Github: [@whatsbug](https://github.com/whatsbug)
-* Weibo: [@biubiu浏览器](https://weibo.com/nantuapp)
 
 ## License
 
