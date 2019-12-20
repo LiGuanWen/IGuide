@@ -52,7 +52,13 @@
     CGFloat skipCenterX = CGRectGetWidth(self.view.bounds) - skipW0dot5 - 20;
     CGFloat skipCenterY = CGRectGetHeight(self.view.bounds) * 0.1;
     CGPoint skipCenter = CGPointMake(skipCenterX, skipCenterY);
-    [self.skipButton animateToCenter:skipCenter];
+    
+    if (CGPointEqualToPoint(self.skipButton.frame.origin, CGPointZero)) {
+        // 第一次设置center时不设置动画（个人觉得这样自然点）
+        self.skipButton.center = skipCenter;
+    } else {
+        [self.skipButton animateToCenter:skipCenter];
+    }
     
     CGFloat neverCenterX = skipCenterX;
     CGFloat neverCenterY = CGRectGetHeight(self.view.bounds) - skipCenterY;
@@ -283,7 +289,7 @@
     fromAnnotationView:(UIView<IGuideAnnotationViewProtocol> *)oldAnnotationView
       toAnnotationView:(UIView<IGuideAnnotationViewProtocol> *)newAnnotationView {
     newAnnotationView.textLabel_protocol.alpha = 0.0;
-    [UIView animateWithDuration:1.2 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:1.25 delay:0.0 usingSpringWithDamping:0.46 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         newAnnotationView.textLabel_protocol.alpha = 1.0;
         oldAnnotationView.alpha = 0.0;
         oldAnnotationView.frame = frame;
@@ -296,7 +302,7 @@
 - (void)animateToCenter:(CGPoint)center
       fromIndicatorView:(UIView *)oldIndicatorView
         toIndicatorView:(UIView *)newIndicatorView {
-    [UIView animateWithDuration:1.2 delay:0.0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:1.25 delay:0.0 usingSpringWithDamping:0.46 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         oldIndicatorView.alpha = 0.0;
         oldIndicatorView.center = center;
         newIndicatorView.center = center;
@@ -332,10 +338,12 @@
     
     if ([dataSource respondsToSelector:@selector(skipButtonInGuideViewController:)]) {
         self.skipButton = [dataSource skipButtonInGuideViewController:self.identifier];
+        self.skipButton.alpha = 0.0;
         [self.skipButton addTarget:self action:@selector(onSkipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     if ([dataSource respondsToSelector:@selector(neverRemindButtonInGuideViewController:)]) {
         self.neverRemindButton = [dataSource neverRemindButtonInGuideViewController:self.identifier];
+        self.neverRemindButton.alpha = 0.0;
         [self.neverRemindButton addTarget:self action:@selector(onNeverRemindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
@@ -345,6 +353,10 @@
         UIWindow *window = UIWindow.new;
         _window = window;
         window.backgroundColor = UIColor.clearColor;
+        if (@available(iOS 13.0, *)) {
+            UIWindowScene *windowScene = (UIWindowScene *)UIApplication.sharedApplication.connectedScenes.anyObject;
+            window.windowScene = windowScene;
+        }
     }
     return _window;
 }
@@ -382,7 +394,7 @@
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:16.0]];
         [button addTarget:self action:@selector(onSkipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [button drawsShadowWithColor:UIColor.systemBlueColor];
+        [button drawsShadowWithColor:UIColor.blackColor];
     }
     return _skipButton;
 }
@@ -401,7 +413,7 @@
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:16.0]];
         [button addTarget:self action:@selector(onNeverRemindButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [button drawsShadowWithColor:UIColor.systemBlueColor];
+        [button drawsShadowWithColor:UIColor.blackColor];
     }
     return _neverRemindButton;
 }

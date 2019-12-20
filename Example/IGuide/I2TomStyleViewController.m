@@ -39,17 +39,17 @@
     if (index == 0) {
         frame = self.slider.frame;
         cornerRadius = CGRectGetHeight(frame) * 0.5;
-        annotationText = @"避免遮挡，跳过按钮可移动";
-        annotationTitle = @"移动试试";
+        annotationText = @"哈喽我是你们可爱的Tom";
+        annotationTitle = @"哈喽";
     } else if (index == 1) {
         frame = CGRectInset(self.button.frame, -8.0, -2.0);
         cornerRadius = 8.0;
-        annotationText = @"指示器变成三角形了";
-        annotationTitle = @"三角形";
+        annotationText = @"可以旋转屏幕试试~";
+        annotationTitle = @"横屏支持";
     } else if (index == 2) {
         frame = self.aSwitch.frame;
         cornerRadius = CGRectGetHeight(frame) * 0.5;
-        annotationText = @"指示器变成自定义的小鸟图片了指示器变成自定义的小鸟图片了";
+        annotationText = @"指示器变成自定义的小鸟图片了";
         annotationTitle = @"自定义指示器";
     } else if (index == 3) {
         annotationText = @"教程结束啦，点击不再提醒就会永远看不到我的哦";
@@ -70,11 +70,12 @@
     // 自定义"注解"视图需要遵守 IGuideAnnotationViewProtocol 协议
     // 可在这里设置"注解"视图的背景色和阴影等（不设置有默认值）
     IGuideTomAnnotationView *annotationView = IGuideTomAnnotationView.new;
-    if (index != 0) {
-        annotationView.backgroundColor = UIColor.randomColor;
-        annotationView.nextButton_protocol.backgroundColor = UIColor.randomColor;
-        annotationView.titleLabel_protocol.textColor = UIColor.randomColor;
-    }
+
+    annotationView.backgroundColor = UIColor.blackColor;
+    annotationView.titleLabel_protocol.textColor = UIColor.systemYellowColor;
+    annotationView.textLabel_protocol.textColor = UIColor.brownColor;
+    annotationView.previousButton_protocol.backgroundColor = UIColor.systemYellowColor;
+    annotationView.nextButton_protocol.backgroundColor = UIColor.systemYellowColor;
     return annotationView;
 }
 
@@ -84,11 +85,9 @@
     // 自定义的指示器需要自行设置大小
     // 可根据index返回不同的指示器
     // 可在这里设置指示器的背景色和阴影等（不设置有默认值）
-    if (index == 0) {
-        return IGuideIndicatorLineView.new;
-    } else if (index == 1) {
+    if (index != 2) {
         IGuideIndicatorTriangleView *indicator = IGuideIndicatorTriangleView.new;
-        indicator.backgroundColor = UIColor.randomColor;
+        indicator.backgroundColor = UIColor.systemYellowColor;
         return indicator;
     } else {
         UIImageView *imageView = UIImageView.new;
@@ -96,6 +95,23 @@
         imageView.frame = CGRectMake(0, 0, 24.0, 24.0);
         return imageView;
     }
+}
+
+- (UIButton *)skipButtonInGuideViewController:(NSString *)identifier {
+    // 自定义"跳过"按钮
+    // 需要自行设置大小
+    UIButton *button = UIButton.new;
+    button.frame = CGRectMake(0, 0, 120, 40);
+    button.layer.cornerRadius = 20.0;
+    button.layer.shadowOpacity = 0.5;
+    button.layer.shadowOffset = CGSizeZero;
+    button.layer.shadowRadius = 8.0;
+    button.layer.shadowColor = UIColor.blackColor.CGColor;
+    button.layer.backgroundColor = UIColor.blackColor.CGColor;
+    [button setTitle:@"自定义按钮" forState:UIControlStateNormal];
+    [button setTitleColor:UIColor.systemYellowColor forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
+    return button;
 }
 
 //MARK: - IGuideViewControllerDelegate

@@ -1,7 +1,7 @@
 {
   "name": "IGuide",
   "version": "0.1.0",
-  "summary": "A short description of IGuide.",
+  "summary": "A Library for making animated tutorials inside your app.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/whatsbug/IGuide",
   "license": {
@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "whatsbug": "whatsbug@qq.com"
+    "whatsbug": "juzhibiao@icloud.com"
   },
   "source": {
     "git": "https://github.com/whatsbug/IGuide.git",

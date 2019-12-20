@@ -18,13 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [IGuideViewController showsWithDataSource:self];
     
-    // 任何遵守协议的对象都可以通过 +showsWithDataSource: 弹出动画教程
+    // 任何对象只要遵守协议都可以通过 +showsWithDataSource: 弹出动画教程
+    [IGuideViewController showsWithDataSource:self];
 }
 
 //MARK: - IGuideViewControllerDataSource
@@ -39,8 +35,8 @@
     item.cornerRadiusOfAnnotated = CGRectGetHeight(item.highlightFrameOfAnnotated) * 0.5;
     item.spacingBetweenAnnotationAndAnnotated = 128.0; // 间隔
     item.shadowColor = UIColor.randomColor;
-    item.annotationText = index == 0 ? @"其他一些知识点" : @"我支持横屏";
-    item.annotationTitle = index == 0 ? @"其他" : @"旋转试试";
+    item.annotationText = index == 0 ? @"其他一些知识点" : @"跳过按钮可移动的哦";
+    item.annotationTitle = index == 0 ? @"其他" : @"移动试试";
     item.backgroundImageName = @"bird";
     item.iconImageName = @"bird";
     return item;
@@ -48,9 +44,9 @@
 
 - (UIVisualEffectView *)visualEffectViewInGuideViewController:(NSString *)identifier {
     // 改变背景的模糊程度
-    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:effect];
-    visualEffectView.alpha = 0.0;
+    //visualEffectView.alpha = 0.0;
     return visualEffectView;
 }
 
@@ -67,22 +63,6 @@
     indicator.frame = CGRectMake(0, 0, 30, 110);
     indicator.backgroundColor = UIColor.brownColor;
     return indicator;
-}
-
-- (UIButton *)skipButtonInGuideViewController:(NSString *)identifier {
-    // 自定义"跳过"按钮
-    UIButton *button = UIButton.new;
-    button.frame = CGRectMake(0, 0, 128.0, 44.0);
-    button.layer.cornerRadius = 10.0;
-    button.layer.backgroundColor = UIColor.randomColor.CGColor;
-    button.layer.shadowOpacity = 0.8;
-    button.layer.shadowOffset = CGSizeZero;
-    button.layer.shadowRadius = 8.0;
-    button.layer.shadowColor = UIColor.randomColor.CGColor;
-    [button setTitle:@"我要跳过" forState:UIControlStateNormal];
-    [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
-    return button;
 }
 
 //MARK: - IGuideViewControllerDelegate

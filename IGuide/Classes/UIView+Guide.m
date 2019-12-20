@@ -32,9 +32,9 @@
         return;
     }
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:1.25 delay:0.0 usingSpringWithDamping:0.46 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.center = center;
-    }];
+    } completion:NULL];
 }
 
 @end
