@@ -28,7 +28,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.themeColor;
+        self.backgroundColor = UIColor.igThemeColor;
         self.layer.cornerRadius = 8.0;
         
         // add subviews
@@ -210,7 +210,7 @@
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [button setTitle:@"知道了" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [button setTitleColor:UIColor.whiteColor.disabledColor forState:UIControlStateDisabled];
+        [button setTitleColor:UIColor.whiteColor.igDisabledColor forState:UIControlStateDisabled];
         [button.titleLabel setFont:self.textLabel_protocol.font];
         [button drawsShadowWithColor:UIColor.systemGreenColor];
     }
@@ -224,7 +224,7 @@
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [button setTitle:@"上一条" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.systemGreenColor forState:UIControlStateNormal];
-        [button setTitleColor:UIColor.systemGreenColor.disabledColor forState:UIControlStateDisabled];
+        [button setTitleColor:UIColor.systemGreenColor.igDisabledColor forState:UIControlStateDisabled];
         [button.titleLabel setFont:self.textLabel_protocol.font];
     }
     return _previousButton_protocol;

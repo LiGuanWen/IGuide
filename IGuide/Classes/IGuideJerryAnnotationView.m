@@ -26,7 +26,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.themeColor;
+        self.backgroundColor = UIColor.igThemeColor;
         self.layer.cornerRadius = 18.0;
         
         // add subviews
@@ -115,7 +115,7 @@
         UIImageView *imageView = UIImageView.new;
         _backgroundView_protocol = imageView;
         imageView.layer.cornerRadius = 18.0;
-        imageView.layer.backgroundColor = UIColor.themeColor.CGColor;
+        imageView.layer.backgroundColor = UIColor.igThemeColor.CGColor;
         imageView.translatesAutoresizingMaskIntoConstraints = NO;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
@@ -128,12 +128,9 @@
         UIView *view = UIView.new;
         _contentView = view;
         view.layer.cornerRadius = 18.0;
-        view.layer.shadowOpacity = 0.3;
-        view.layer.shadowColor = UIColor.systemRedColor.CGColor;
-        view.layer.shadowOffset = CGSizeZero;
-        view.layer.shadowRadius = 6.0;
         view.translatesAutoresizingMaskIntoConstraints = NO;
         view.backgroundColor = UIColor.whiteColor;
+        [view drawsShadowWithColor:UIColor.blackColor];
     }
     return _contentView;
 }
@@ -182,7 +179,7 @@
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [button setTitle:@"知道了" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [button setTitleColor:UIColor.whiteColor.disabledColor forState:UIControlStateDisabled];
+        [button setTitleColor:UIColor.whiteColor.igDisabledColor forState:UIControlStateDisabled];
         [button.titleLabel setFont:self.textLabel_protocol.font];
         [button drawsShadowWithColor:UIColor.systemGreenColor];
     }
@@ -197,7 +194,7 @@
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [button setTitle:@"上一条" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [button setTitleColor:UIColor.whiteColor.disabledColor forState:UIControlStateDisabled];
+        [button setTitleColor:UIColor.whiteColor.igDisabledColor forState:UIControlStateDisabled];
         [button.titleLabel setFont:self.textLabel_protocol.font];
         [button drawsShadowWithColor:UIColor.systemGreenColor];
     }

@@ -10,7 +10,7 @@
 
 @implementation UIColor (Guide)
 
-- (UIColor *)disabledColor {
+- (UIColor *)igDisabledColor {
     CGFloat red = 0.0;
     CGFloat green = 0.0;
     CGFloat blue = 0.0;
@@ -19,7 +19,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha * 0.23];
 }
 
-+ (UIColor *)themeColor {
++ (UIColor *)igThemeColor {
     return [UIColor colorWithRed:226.0/255.0 green:222.0/255.0 blue:133.0/255.0 alpha:1.0];
 }
 

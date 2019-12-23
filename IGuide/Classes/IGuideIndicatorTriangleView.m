@@ -63,7 +63,7 @@
     if (!_shapeView) {
         UIView *view = UIView.new;
         _shapeView = view;
-        view.backgroundColor = UIColor.themeColor;
+        view.backgroundColor = UIColor.igThemeColor;
     }
     return _shapeView;
 }

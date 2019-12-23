@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (Guide)
 
-@property(nonatomic, weak, readonly) UIColor *disabledColor;
-@property(class, nonatomic, readonly) UIColor *themeColor;
+@property(nonatomic, weak, readonly) UIColor *igDisabledColor;
+@property(class, nonatomic, readonly) UIColor *igThemeColor;
 
 @end
 

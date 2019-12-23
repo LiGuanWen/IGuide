@@ -113,8 +113,8 @@
     
     // annotationView
     UIView<IGuideAnnotationViewProtocol> *oldAnnotationView = [self.view viewWithTag:NSNumber.tagOfAnnotationView];
-    [oldAnnotationView.previousButton_protocol removeTarget:self action:@selector(onPreviousButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [oldAnnotationView.nextButton_protocol removeTarget:self action:@selector(onNextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    oldAnnotationView.previousButton_protocol.userInteractionEnabled = NO;
+    oldAnnotationView.nextButton_protocol.userInteractionEnabled = NO;
     
     UIView<IGuideAnnotationViewProtocol> *annotationView = nil;
     if ([self.dataSource respondsToSelector:@selector(guideViewController:annotationViewForGuideAtIndex:)]) {
@@ -375,7 +375,7 @@
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         _visualEffectView = visualEffectView;
-        visualEffectView.alpha = 0.7;
+        visualEffectView.alpha = 0.9;
     }
     return _visualEffectView;
 }
