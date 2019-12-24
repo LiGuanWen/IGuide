@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'IGuide'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A Library for making animated tutorials inside your app.'
 
 # This description is used to generate tags and improve search results.
