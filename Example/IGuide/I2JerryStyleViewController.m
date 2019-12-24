@@ -52,7 +52,7 @@
     item.cornerRadiusOfAnnotated = cornerRadius;
     item.annotationText = annotationText;
     item.annotationTitle = annotationTitle;
-    item.backgroundImageName = @"illustration";
+    item.backgroundImageName = [NSString stringWithFormat:@"i%ld", index];
     item.iconImageName = @"bird";
     return item;
 }
