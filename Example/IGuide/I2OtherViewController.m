@@ -21,6 +21,13 @@
     
     // 任何对象只要遵守协议都可以通过 +showsWithDataSource: 弹出动画教程
     [IGuideViewController showsWithDataSource:self];
+    
+    // 如何获取内置"注解"视图的root权限？？？
+    // 如果你觉得内置的"注解"视图暴露的api有限，达不到你想要的定制效果，那么该怎么办呢？
+    // 以下有两个办法：
+    // 1. 准守IGuideAnnotationViewProtocol协议，完全自定义你自己的"注解"视图
+    // 2. 新建一个继承UIView的子类，复制内置"注解"视图的所有代码到新建的类，在新建的类修改你想定制的代码
+    // 最后通过 -guideViewController:annotationViewForGuideAtIndex: 代理方法返回新建的类即可
 }
 
 //MARK: - IGuideViewControllerDataSource
