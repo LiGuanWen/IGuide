@@ -5,7 +5,19 @@
 [![License](https://img.shields.io/cocoapods/l/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 [![Platform](https://img.shields.io/cocoapods/p/IGuide.svg?style=flat)](https://cocoapods.org/pods/IGuide)
 
-A Library for making animated tutorials inside your app
+🎃🎃🎃 一个轻量、灵活，用于制作新手引导教程的组件。使用该组件你可快速地为任意UIView或CGRect添加一个高颜值的图文注解。内置种类丰富的图文注解视图供你选择。注解与注解之间通过弹性动画切换。组件高度灵活、易扩展，每一个视图、每一个动画都可自定义，能满足你的各种需求。
+
+## Features
+
+* 可为任意 UIView、CGRect 添加注解；
+* 高度灵活，可深度自定义；
+* 轻量，无内置任何资源文件；
+* 内置种类丰富的图文注解视图；
+* 内置种类丰富的指示器视图；
+* 横屏适配；
+* 长期维护；
+* 使用简单，一句代码调用；
+* 竟然还有注释；
 
 ## Preview
 
