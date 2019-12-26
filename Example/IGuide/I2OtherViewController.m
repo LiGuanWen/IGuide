@@ -42,7 +42,7 @@
     item.cornerRadiusOfAnnotated = CGRectGetHeight(item.highlightFrameOfAnnotated) * 0.5;
     item.spacingBetweenAnnotationAndAnnotated = 128.0; // 间隔
     item.shadowColor = UIColor.randomColor;
-    item.annotationText = index == 0 ? @"其他一些知识点" : @"跳过按钮可移动的哦";
+    item.annotationText = index == 0 ? @"其他一些知识点" : @"蓝色按钮可移动的哦";
     item.annotationTitle = index == 0 ? @"其他" : @"移动试试";
     item.backgroundImageName = @"bird";
     item.iconImageName = @"bird";
