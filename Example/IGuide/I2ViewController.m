@@ -11,6 +11,7 @@
 #import "I2TomStyleViewController.h"
 #import "I2JerryStyleViewController.h"
 #import "I2DIYAnimationViewController.h"
+#import "I2DIYAnnotationViewController.h"
 #import "I2OtherViewController.h"
 
 @interface I2ViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -29,6 +30,7 @@
                        @"内置样式Tom",
                        @"内置样式Jerry",
                        @"自定义动画",
+                       @"自定义注解视图",
                        @"其他知识点"];
 }
 
@@ -57,6 +59,8 @@
     } else if (indexPath.row == 3) {
         toVC = I2DIYAnimationViewController.new;
     } else if (indexPath.row == 4) {
+        toVC = I2DIYAnnotationViewController.new;
+    } else if (indexPath.row == 5) {
         toVC = I2OtherViewController.new;
     }
     

@@ -27,6 +27,8 @@
 		691F54A823A9BF5C0007B195 /* I2JerryStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F54A723A9BF5C0007B195 /* I2JerryStyleViewController.m */; };
 		691F54AB23A9CE740007B195 /* I2DIYAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F54AA23A9CE740007B195 /* I2DIYAnimationViewController.m */; };
 		691F54AE23A9D77F0007B195 /* I2OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691F54AD23A9D77F0007B195 /* I2OtherViewController.m */; };
+		69E242A923B49E9D00C50DF9 /* I2DIYAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E242A823B49E9D00C50DF9 /* I2DIYAnnotationView.m */; };
+		69E242AC23B4A2A900C50DF9 /* I2DIYAnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E242AB23B4A2A900C50DF9 /* I2DIYAnnotationViewController.m */; };
 		6BE78991575F616AFA7D153C /* Pods_IGuide_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A787C922D65782CA1775656D /* Pods_IGuide_Tests.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		74DA96057CED16738956CA69 /* Pods_IGuide_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF571563DACD6EE492FF92 /* Pods_IGuide_Example.framework */; };
@@ -81,6 +83,10 @@
 		691F54AA23A9CE740007B195 /* I2DIYAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I2DIYAnimationViewController.m; sourceTree = "<group>"; };
 		691F54AC23A9D77F0007B195 /* I2OtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = I2OtherViewController.h; sourceTree = "<group>"; };
 		691F54AD23A9D77F0007B195 /* I2OtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I2OtherViewController.m; sourceTree = "<group>"; };
+		69E242A723B49E9D00C50DF9 /* I2DIYAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = I2DIYAnnotationView.h; sourceTree = "<group>"; };
+		69E242A823B49E9D00C50DF9 /* I2DIYAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I2DIYAnnotationView.m; sourceTree = "<group>"; };
+		69E242AA23B4A2A900C50DF9 /* I2DIYAnnotationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = I2DIYAnnotationViewController.h; sourceTree = "<group>"; };
+		69E242AB23B4A2A900C50DF9 /* I2DIYAnnotationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = I2DIYAnnotationViewController.m; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1BF571563DACD6EE492FF92 /* Pods_IGuide_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGuide_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,10 +182,14 @@
 				691F54A723A9BF5C0007B195 /* I2JerryStyleViewController.m */,
 				691F54A923A9CE740007B195 /* I2DIYAnimationViewController.h */,
 				691F54AA23A9CE740007B195 /* I2DIYAnimationViewController.m */,
+				69E242AA23B4A2A900C50DF9 /* I2DIYAnnotationViewController.h */,
+				69E242AB23B4A2A900C50DF9 /* I2DIYAnnotationViewController.m */,
 				691F54AC23A9D77F0007B195 /* I2OtherViewController.h */,
 				691F54AD23A9D77F0007B195 /* I2OtherViewController.m */,
 				691F549A23A886540007B195 /* I2BaseViewController.h */,
 				691F549B23A886540007B195 /* I2BaseViewController.m */,
+				69E242A723B49E9D00C50DF9 /* I2DIYAnnotationView.h */,
+				69E242A823B49E9D00C50DF9 /* I2DIYAnnotationView.m */,
 				691F54A323A8E9B00007B195 /* UIColor+I2Add.h */,
 				691F54A423A8E9B00007B195 /* UIColor+I2Add.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -400,7 +410,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				691F54A523A8E9B00007B195 /* UIColor+I2Add.m in Sources */,
+				69E242AC23B4A2A900C50DF9 /* I2DIYAnnotationViewController.m in Sources */,
 				6003F59E195388D20070C39A /* I2AppDelegate.m in Sources */,
+				69E242A923B49E9D00C50DF9 /* I2DIYAnnotationView.m in Sources */,
 				691F54AB23A9CE740007B195 /* I2DIYAnimationViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* I2ViewController.m in Sources */,
 				691F54A223A8BE490007B195 /* I2TomStyleViewController.m in Sources */,

@@ -11,7 +11,7 @@
 
 ## Features
 
-* 支持Swift项目
+* 支持Swift项目；
 * 可为任意 UIView、CGRect 添加注解；
 * 可自定义注解视图；
 * 可自定义指示器；

@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 @property(nonatomic, weak) id<IGuideAnnotationViewModelProtocol> model;
 @property(nonatomic, strong, readonly) UILabel *textLabel_protocol;
-@property(nonatomic, strong, readonly) UIButton *previousButton_protocol;
 @property(nonatomic, strong, readonly) UIButton *nextButton_protocol;
 
 @optional
+@property(nonatomic, strong, readonly) UIButton *previousButton_protocol;
 @property(nonatomic, strong, readonly) UILabel *titleLabel_protocol;
 @property(nonatomic, strong, readonly) UIImageView *iconView_protocol;
 @property(nonatomic, strong, readonly) UIImageView *backgroundView_protocol;

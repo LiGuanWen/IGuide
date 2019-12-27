@@ -113,9 +113,6 @@
     
     // annotationView
     UIView<IGuideAnnotationViewProtocol> *oldAnnotationView = [self.view viewWithTag:NSNumber.tagOfAnnotationView];
-    oldAnnotationView.previousButton_protocol.userInteractionEnabled = NO;
-    oldAnnotationView.nextButton_protocol.userInteractionEnabled = NO;
-    
     UIView<IGuideAnnotationViewProtocol> *annotationView = nil;
     if ([self.dataSource respondsToSelector:@selector(guideViewController:annotationViewForGuideAtIndex:)]) {
         annotationView = [self.dataSource guideViewController:self.identifier annotationViewForGuideAtIndex:index];
@@ -126,9 +123,11 @@
     annotationView.model = item;
     annotationView.frame = oldAnnotationView.frame;
     annotationView.tag = NSNumber.tagOfAnnotationView;
-    annotationView.previousButton_protocol.enabled = (index != 0);
-    [annotationView.previousButton_protocol addTarget:self action:@selector(onPreviousButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [annotationView.nextButton_protocol addTarget:self action:@selector(onNextButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    if ([annotationView respondsToSelector:@selector(previousButton_protocol)]) {
+        [annotationView.previousButton_protocol addTarget:self action:@selector(onPreviousButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        annotationView.previousButton_protocol.enabled = (index != 0);
+    }
     BOOL hasUserCustomizedShadowOfAnnotationView = (annotationView.layer.shadowOpacity != 0);
     if (!hasUserCustomizedShadowOfAnnotationView) {
         [annotationView drawsShadowWithColor:item.shadowColor];
